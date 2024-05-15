@@ -1,0 +1,99 @@
+{
+    "servers": {
+        "staging": {
+            "SERVER_NAME_STG": {
+                "REMOTE_HOST": "dnsOrIP",
+                "REMOTE_USER": "username",
+                "SSH_KEY": "-----BEGIN RSA PRIVATE KEY-----\n...\n-----END RSA PRIVATE KEY-----"
+            }
+        },
+        "production": {
+            "SERVER_NAME_PROD": {
+                "REMOTE_HOST": "dnsOrIP",
+                "REMOTE_USER": "username",
+                "SSH_KEY": "-----BEGIN RSA PRIVATE KEY-----\n...\n-----END RSA PRIVATE KEY-----"
+            }
+        }
+    },
+    "configs": {
+        "global": {
+            "production": {
+                "secrets": {
+                    "GLOBAL_PRODUCTION_SECRET_NAME_1": "example",
+                    "GLOBAL_PRODUCTION_SECRET_NAME_2": "example 2",
+                    "GLOBAL_PRODUCTION_SECRET_NAME_3": "example 3"
+                },
+                "vars": {
+                    "GLOBAL_PRODUCTION_VAR_NAME_1": "example",
+                    "GLOBAL_PRODUCTION_VAR_NAME_2": "example 2"
+                }
+            },
+            "staging": {
+                "secrets": {
+                    "GLOBAL_STAGING_SECRET_NAME_1": "example",
+                    "GLOBAL_STAGING_SECRET_NAME_2": "example 2",
+                    "GLOBAL_STAGING_SECRET_NAME_3": "example 3"
+                },
+                "vars": {
+                    "GLOBAL_STAGING_VAR_NAME_1": "example",
+                    "GLOBAL_STAGING_VAR_NAME_2": "example 2",
+                    "GLOBAL_STAGING_VAR_NAME_3": "example 3"
+                }
+            },
+            "all": {
+                "secrets": {
+                    "GLOBAL_SECRET_NAME_1": "example",
+                    "GLOBAL_SECRET_NAME_2": "example 2",
+                    "GLOBAL_SECRET_NAME_3": "example 3"
+                },
+                "vars": {
+                    "GLOBAL_VAR_NAME_1": "example",
+                    "GLOBAL_VAR_NAME_2": "example 2",
+                    "GLOBAL_VAR_NAME_3": "example 3"
+                }
+            }
+        }
+    },
+    "repositories": {
+        "repositoryName": {
+            "environments": {
+                "staging": {
+                    "server": "SERVER_NAME_STG",
+                    "secrets": {
+                        "REPO_ENVIRONMENT_SECRET_NAME_1": "example",
+                        "REPO_ENVIRONMENT_SECRET_NAME_2": "example 2",
+                        "REPO_ENVIRONMENT_SECRET_NAME_3": "example 3"
+                    },
+                    "vars": {
+                        "REPO_ENVIRONMENT_VAR_NAME_1": "example",
+                        "REPO_ENVIRONMENT_VAR_NAME_2": "example 2",
+                        "REPO_ENVIRONMENT_VAR_NAME_3": "example 3"
+                    }
+                },
+                "production": {
+                    "server": "SERVER_NAME_PRD",
+                    "secrets": {},
+                    "vars": {
+                        "REPO_ENVIRONMENT_VAR_NAME_1": "example",
+                        "REPO_ENVIRONMENT_VAR_NAME_2": "example 2",
+                        "REPO_ENVIRONMENT_VAR_NAME_3": "example 3"
+                    }
+                }
+            }
+        },
+        "other-repositoryName": {
+            "environments": {
+                "staging": {
+                    "server": "SERVER_NAME_STG",
+                    "secrets": {},
+                    "vars": {
+                        "REPO_ENVIRONMENT_VAR_NAME_1": "example",
+                        "REPO_ENVIRONMENT_VAR_NAME_2": "example 2",
+                        "REPO_ENVIRONMENT_VAR_NAME_3": "example 3"
+                    }
+                },
+                "production": {}
+            }
+        }
+    }
+}
